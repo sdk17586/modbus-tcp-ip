@@ -11,12 +11,13 @@ RUN apt-get update && apt-get install -y \
     python-catkin-tools \
     && rm -rf /var/lib/apt/lists/*
 
-# Update Python 3 packages
+# Update Python 3 packages and install pymodbus
 RUN pip3 install --upgrade \
     setuptools \
     wheel \
     rospkg \
-    catkin_pkg
+    catkin_pkg \
+    pymodbus  
 
 # Setup catkin workspace with Python 3
 ENV CATKIN_WS=/root/catkin_ws
